@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-course"
+version = "0.0.0"
+dependencies = ["python-dotenv", "anthropic", "pydantic"]
+
+[tool.setuptools]
+py-modules = ["llm", "config", "agent"]

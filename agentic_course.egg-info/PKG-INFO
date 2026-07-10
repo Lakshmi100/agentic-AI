@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: agentic-course
+Version: 0.0.0
+Requires-Dist: python-dotenv
+Requires-Dist: anthropic
+Requires-Dist: pydantic

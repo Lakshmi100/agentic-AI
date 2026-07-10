@@ -1,0 +1,6 @@
+pyproject.toml
+agentic_course.egg-info/PKG-INFO
+agentic_course.egg-info/SOURCES.txt
+agentic_course.egg-info/dependency_links.txt
+agentic_course.egg-info/requires.txt
+agentic_course.egg-info/top_level.txt
