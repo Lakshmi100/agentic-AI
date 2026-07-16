@@ -8,3 +8,12 @@
 - Done: JSON extraction -> Pydantic, strip_fences repair, retry-with-feedback loop
 - Surprised: retry loop pressured an honest null into a fabricated "" — green gate, false data; schema str|None legalized honesty
 - Next: Day 3 — tool calling, one round trip (get_current_time, calculator)
+
+## Day 3
+- Done: tool schemas, one round trip, clock (unfakeable) + calculator (structured args)
+- Important to note : model never executes anything — it requests and waits; my code is the hands
+
+## Day 4
+- Done: if -> while (bounded), multi-tool turns, parallel + sequential experiments
+- Important to Note: tool_use_id is a correlation key — obvious the moment two results travel in one message; iteration 2 built "345 * 2" from a value born at runtime
+- Next: Day 5 — robustness: retries, timeouts, feeding tool errors back

@@ -8,4 +8,4 @@ version = "0.0.0"
 dependencies = ["python-dotenv", "anthropic", "pydantic"]
 
 [tool.setuptools]
-py-modules = ["llm", "config", "agent"]
+py-modules = ["llm", "config", "agent", "tools"]
