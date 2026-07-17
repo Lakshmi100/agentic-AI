@@ -22,3 +22,14 @@
 - Important to Note: tool_use_id is a correlation key — obvious the moment two results travel in one message; iteration 2 built "345 * 2" from a value born at runtime
 - Next: Day 5 — robustness: retries, timeouts, feeding tool errors back
 
+## Day 5
+- Done: API retry w/ exponential backoff, structured logging, tool errors caught -> fed back as tool_result
+- Surprised: divide-by-zero didn't crash the agent — model READ the ZeroDivisionError and explained it; failure became information
+- Layering: retry(API) -> try/except(tool) -> model reasoning, each catches what the layer below can't
+- Next: Day 6 — consolidate everything into a reusable Agent class (agent.py)
+
+## Day 6 — Week 1 capstone
+- Done: Agent class in agent.py — register_tool co-locates schema+fn (anti-drift), run() encapsulates the loop
+- Consolidated Days 1-5: statelessness, tool calling, tool_use_id, bounded loop, retry/backoff, errors-as-information
+- Capstone verified: one .run() handled parallel tools + a live tool failure + coherent final answer
+- Next: Week 2 — memory & context management (the input_tokens growth curve from Day 1 comes due)
