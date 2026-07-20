@@ -33,3 +33,13 @@
 - Consolidated Days 1-5: statelessness, tool calling, tool_use_id, bounded loop, retry/backoff, errors-as-information
 - Capstone verified: one .run() handled parallel tools + a live tool failure + coherent final answer
 - Next: Week 2 — memory & context management (the input_tokens growth curve from Day 1 comes due)
+## Add-on: get_weather tool 
+- Built get_weather (Open-Meteo, no API key): geocode name/zip -> lat/lon, then current conditions 
+- Bug: model kept sending "Atlanta, GA" with a comma -> geocoder returned empty -> ERROR string 
+- Root cause : the TOOL DESCRIPTION's example had the comma; model imitated it. Fixed the example at the source, kept a defensive split(",") too 
+- to make sure ,it just uses Atlanta and not Atlanta,GA . But now ambiquity weighs in as Atlanta ,GA is the popular one and we escape there , 'Springfiled' would be a gamble 
+- Lesson: the model treats tool descriptions/examples as instructions — a misleading example is a bug 
+- Note: bare "Atlanta" geocodes ambiguously (matched a dam); admin1 filter would pin the city if needed - need to debug on this too  
+- Note : couple issues to resolves in the code , 30004 resolves to Murcia,Murcia and not Alpharetta, GA even after tool description/example fixed to say US
+- City and state or US zip code - need to come back again to check on this.
+

@@ -39,4 +39,9 @@ def run_agent(question: str) -> str:
 
 if __name__ == "__main__":
     #print("FINAL:", run_agent("What is 1234 * 5678, and what time is it right now?"))
-    print("FINAL:", run_agent("Take 15 times 23, then multiply that result by 2."))
+    #print("FINAL:", run_agent("Take 15 times 23, then multiply that result by 2."))
+    #print("FINAL:", run_agent("what is (15 * 23) * 2   "))
+    #print("FINAL:", run_agent("What is the weather in Chennai Tamilnadu "))
+    print("FINAL:", run_agent("What is the Weather for 30004"))
+    
+    
